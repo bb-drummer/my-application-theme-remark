@@ -30,33 +30,6 @@
 		echo $this->headLink();
 	?>
 
-	<!-- Stylesheets -- >
-	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../assets/css/bootstrap-extend.min.css">
-	<link rel="stylesheet" href="../assets/css/site.min.css">
-
-	<!-- Plugins -- >
-	<link rel="stylesheet" href="../assets/vendor/animsition/animsition.css">
-	<link rel="stylesheet" href="../assets/vendor/asscrollable/asScrollable.css">
-	<link rel="stylesheet" href="../assets/vendor/switchery/switchery.css">
-	<link rel="stylesheet" href="../assets/vendor/intro-js/introjs.css">
-	<link rel="stylesheet" href="../assets/vendor/slidepanel/slidePanel.css">
-	<link rel="stylesheet" href="../assets/vendor/flag-icon-css/flag-icon.css">
-
-	<!-- Plugins For This Page -- >
-	<link rel="stylesheet" href="../assets/vendor/chartist-js/chartist.css">
-	<link rel="stylesheet" href="../assets/vendor/jvectormap/jquery-jvectormap.css">
-	<link rel="stylesheet" href="../assets/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css">
-
-	<!-- Page -- >
-	<link rel="stylesheet" href="../assets/examples/css/dashboard/v1.css">
-
-	<!-- Fonts -- >
-	<link rel="stylesheet" href="../assets/fonts/web-icons/web-icons.min.css">
-	<link rel="stylesheet" href="../assets/fonts/brand-icons/brand-icons.min.css">
-	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
-	<link rel="stylesheet" href="../assets/fonts/weather-icons/weather-icons.css">
-	-->
 	<?php 
 		$this->headScript()
 			->appendFile($this->basePath($themePath . '../vendor/html5shiv//html5shiv.js'),   'text/javascript', array('conditional' => 'lt IE 9',))
@@ -66,23 +39,8 @@
 			->appendFile($this->basePath($themePath . '../vendor/breakpoints/breakpoints.js'), 'text/javascript')
 		;
 		echo $this->headScript();
+		echo $this->inlineScript('SCRIPT', 'Breakpoints();');
 	?>
-	<!-- ---[if lt IE 9]>
-	<script src="../assets/vendor/html5shiv/html5shiv.min.js"></script>
-	<![endif]-->
-
-	<!-- ---[if lt IE 10]>
-	<script src="../assets/vendor/media-match/media.match.min.js"></script>
-	<script src="../assets/vendor/respond/respond.min.js"></script>
-	<![endif]-->
-
-	<!-- Scripts -- >
-	<script src="../assets/vendor/modernizr/modernizr.js"></script>
-	<script src="../assets/vendor/breakpoints/breakpoints.js"></script>
-	-->
-	<script>
-	Breakpoints();
-	</script>
 </head>
 <body class="dashboard">
 	<!--[if lt IE 8]>
@@ -102,7 +60,7 @@
 		<i class="icon wb-more-horizontal" aria-hidden="true"></i>
 		</button>
 		<div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
-		<img class="navbar-brand-logo" src="../assets/images/logo.png" title="Remark">
+		<img class="navbar-brand-logo" src="../images/logo.png" title="Remark">
 		<span class="navbar-brand-text"> Remark</span>
 		</div>
 		<button type="button" class="navbar-toggle collapsed" data-target="#site-navbar-search"
@@ -211,32 +169,32 @@
 						<ul class="blocks-3">
 						<li>
 							<a class="thumbnail margin-0" href="javascript:void(0)">
-							<img class="width-full" src="../assets/photos/placeholder.png" alt="..." />
+							<img class="width-full" src="../photos/placeholder.png" alt="..." />
 							</a>
 						</li>
 						<li>
 							<a class="thumbnail margin-0" href="javascript:void(0)">
-							<img class="width-full" src="../assets/photos/placeholder.png" alt="..." />
+							<img class="width-full" src="../photos/placeholder.png" alt="..." />
 							</a>
 						</li>
 						<li>
 							<a class="thumbnail margin-0" href="javascript:void(0)">
-							<img class="width-full" src="../assets/photos/placeholder.png" alt="..." />
+							<img class="width-full" src="../photos/placeholder.png" alt="..." />
 							</a>
 						</li>
 						<li>
 							<a class="thumbnail margin-0" href="javascript:void(0)">
-							<img class="width-full" src="../assets/photos/placeholder.png" alt="..." />
+							<img class="width-full" src="../photos/placeholder.png" alt="..." />
 							</a>
 						</li>
 						<li>
 							<a class="thumbnail margin-0" href="javascript:void(0)">
-							<img class="width-full" src="../assets/photos/placeholder.png" alt="..." />
+							<img class="width-full" src="../photos/placeholder.png" alt="..." />
 							</a>
 						</li>
 						<li>
 							<a class="thumbnail margin-0" href="javascript:void(0)">
-							<img class="width-full" src="../assets/photos/placeholder.png" alt="..." />
+							<img class="width-full" src="../photos/placeholder.png" alt="..." />
 							</a>
 						</li>
 						</ul>
@@ -343,7 +301,7 @@
 			<a class="navbar-avatar dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false"
 			data-animation="scale-up" role="button">
 				<span class="avatar avatar-online">
-				<img src="../assets/portraits/5.jpg" alt="...">
+				<img src="../portraits/5.jpg" alt="...">
 				<i></i>
 				</span>
 			</a>
@@ -465,7 +423,7 @@
 						<div class="media">
 						<div class="media-left padding-right-10">
 							<span class="avatar avatar-sm avatar-online">
-							<img src="../assets/portraits/2.jpg" alt="..." />
+							<img src="../portraits/2.jpg" alt="..." />
 							<i></i>
 							</span>
 						</div>
@@ -482,7 +440,7 @@
 						<div class="media">
 						<div class="media-left padding-right-10">
 							<span class="avatar avatar-sm avatar-off">
-							<img src="../assets/portraits/3.jpg" alt="..." />
+							<img src="../portraits/3.jpg" alt="..." />
 							<i></i>
 							</span>
 						</div>
@@ -499,7 +457,7 @@
 						<div class="media">
 						<div class="media-left padding-right-10">
 							<span class="avatar avatar-sm avatar-busy">
-							<img src="../assets/portraits/4.jpg" alt="..." />
+							<img src="../portraits/4.jpg" alt="..." />
 							<i></i>
 							</span>
 						</div>
@@ -516,7 +474,7 @@
 						<div class="media">
 						<div class="media-left padding-right-10">
 							<span class="avatar avatar-sm avatar-away">
-							<img src="../assets/portraits/5.jpg" alt="..." />
+							<img src="../portraits/5.jpg" alt="..." />
 							<i></i>
 							</span>
 						</div>
