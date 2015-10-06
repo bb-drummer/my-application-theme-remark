@@ -23,7 +23,9 @@
 				'rel' => 'apple-touch-icon', 
 				'href' => $this->basePath($themePath . 'images/apple-touch-icon.png')
  			))
-			->appendStylesheet($this->basePath($themePath . 'css/stylesheets.css'));
+		;
+		$this->headLink()
+			->appendStylesheet($this->basePath($themePath . 'css/stylesheets.css'))
 		;
 		echo $this->headLink();
 	?>
