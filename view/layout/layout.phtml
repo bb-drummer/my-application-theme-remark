@@ -32,11 +32,11 @@
 
 	<?php 
 		$this->headScript()
-			->appendFile($this->basePath($themePath . '../vendor/html5shiv//html5shiv.js'),   'text/javascript', array('conditional' => 'lt IE 9',))
-			->appendFile($this->basePath($themePath . '../vendor/media-match/media.match.min.js'), 'text/javascript', array('conditional' => 'lt IE 1ß',))
-			->appendFile($this->basePath($themePath . '../vendor/respond/respond.min.js'), 'text/javascript', array('conditional' => 'lt IE 10',))
-			->appendFile($this->basePath($themePath . '../vendor/modernizr/modernizr.js'), 'text/javascript')
-			->appendFile($this->basePath($themePath . '../vendor/breakpoints/breakpoints.js'), 'text/javascript')
+			->appendFile($this->basePath($themePath . 'vendor/html5shiv//html5shiv.js'),   'text/javascript', array('conditional' => 'lt IE 9',))
+			->appendFile($this->basePath($themePath . 'vendor/media-match/media.match.min.js'), 'text/javascript', array('conditional' => 'lt IE 1ß',))
+			->appendFile($this->basePath($themePath . 'vendor/respond/respond.min.js'), 'text/javascript', array('conditional' => 'lt IE 10',))
+			->appendFile($this->basePath($themePath . 'vendor/modernizr/modernizr.js'), 'text/javascript')
+			->appendFile($this->basePath($themePath . 'vendor/breakpoints/breakpoints.js'), 'text/javascript')
 		;
 		echo $this->headScript();
 		echo $this->inlineScript('SCRIPT', 'Breakpoints();');
@@ -301,7 +301,7 @@
 			<a class="navbar-avatar dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false"
 			data-animation="scale-up" role="button">
 				<span class="avatar avatar-online">
-				<img src="../portraits/5.jpg" alt="...">
+				<img src="<?php echo $themePath; ?>/portraits/5.jpg" alt="...">
 				<i></i>
 				</span>
 			</a>
@@ -423,7 +423,7 @@
 						<div class="media">
 						<div class="media-left padding-right-10">
 							<span class="avatar avatar-sm avatar-online">
-							<img src="../portraits/2.jpg" alt="..." />
+							<img src="<?php echo $themePath; ?>/portraits/2.jpg" alt="..." />
 							<i></i>
 							</span>
 						</div>
@@ -440,7 +440,7 @@
 						<div class="media">
 						<div class="media-left padding-right-10">
 							<span class="avatar avatar-sm avatar-off">
-							<img src="../portraits/3.jpg" alt="..." />
+							<img src="<?php echo $themePath; ?>/portraits/3.jpg" alt="..." />
 							<i></i>
 							</span>
 						</div>
@@ -457,7 +457,7 @@
 						<div class="media">
 						<div class="media-left padding-right-10">
 							<span class="avatar avatar-sm avatar-busy">
-							<img src="../portraits/4.jpg" alt="..." />
+							<img src="<?php echo $themePath; ?>/portraits/4.jpg" alt="..." />
 							<i></i>
 							</span>
 						</div>
@@ -474,7 +474,7 @@
 						<div class="media">
 						<div class="media-left padding-right-10">
 							<span class="avatar avatar-sm avatar-away">
-							<img src="../portraits/5.jpg" alt="..." />
+							<img src="<?php echo $themePath; ?>/portraits/5.jpg" alt="..." />
 							<i></i>
 							</span>
 						</div>
@@ -2141,51 +2141,51 @@
 		$this->inlineScript()
 	
 	// <!-- Core	-->
-			->appendFile($this->basePath($themePath . '../vendor/jquery/jquery.js'))
-			->appendFile($this->basePath($themePath . '../vendor/bootstrap/bootstrap.js'))
-			->appendFile($this->basePath($themePath . '../vendor/animsition/jquery.animsition.js'))
-			->appendFile($this->basePath($themePath . '../vendor/asscroll/jquery-asScroll.js'))
-			->appendFile($this->basePath($themePath . '../vendor/mousewheel/jquery.mousewheel.js'))
-			->appendFile($this->basePath($themePath . '../vendor/asscrollable/jquery.asScrollable.all.js'))
-			->appendFile($this->basePath($themePath . '../vendor/ashoverscroll/jquery-asHoverScroll.js'))
+			->appendFile($this->basePath($themePath . 'vendor/jquery/jquery.js'))
+			->appendFile($this->basePath($themePath . 'vendor/bootstrap/bootstrap.js'))
+			->appendFile($this->basePath($themePath . 'vendor/animsition/jquery.animsition.js'))
+			->appendFile($this->basePath($themePath . 'vendor/asscroll/jquery-asScroll.js'))
+			->appendFile($this->basePath($themePath . 'vendor/mousewheel/jquery.mousewheel.js'))
+			->appendFile($this->basePath($themePath . 'vendor/asscrollable/jquery.asScrollable.all.js'))
+			->appendFile($this->basePath($themePath . 'vendor/ashoverscroll/jquery-asHoverScroll.js'))
 
 	// <!-- Plugins -->
-			->appendFile($this->basePath($themePath . '../vendor/switchery/switchery.min.js'))
-			->appendFile($this->basePath($themePath . '../vendor/intro-js/intro.js'))
-			->appendFile($this->basePath($themePath . '../vendor/screenfull/screenfull.js'))
-			->appendFile($this->basePath($themePath . '../vendor/slidepanel/jquery-slidePanel.js'))
+			->appendFile($this->basePath($themePath . 'vendor/switchery/switchery.min.js'))
+			->appendFile($this->basePath($themePath . 'vendor/intro-js/intro.js'))
+			->appendFile($this->basePath($themePath . 'vendor/screenfull/screenfull.js'))
+			->appendFile($this->basePath($themePath . 'vendor/slidepanel/jquery-slidePanel.js'))
 
 	// <!-- Plugins For This Page -->
-			->appendFile($this->basePath($themePath . '../vendor/skycons/skycons.js'))
-			->appendFile($this->basePath($themePath . '../vendor/chartist-js/chartist.min.js'))
-			->appendFile($this->basePath($themePath . '../vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.min.js'))
-			->appendFile($this->basePath($themePath . '../vendor/aspieprogress/jquery-asPieProgress.min.js'))
-			->appendFile($this->basePath($themePath . '../vendor/jvectormap/jquery-jvectormap.min.js'))
-			->appendFile($this->basePath($themePath . '../vendor/jvectormap/maps/jquery-jvectormap-au-mill-en.js'))
-			->appendFile($this->basePath($themePath . '../vendor/matchheight/jquery.matchHeight-min.js'))
+			->appendFile($this->basePath($themePath . 'vendor/skycons/skycons.js'))
+			->appendFile($this->basePath($themePath . 'vendor/chartist-js/chartist.min.js'))
+			->appendFile($this->basePath($themePath . 'vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.min.js'))
+			->appendFile($this->basePath($themePath . 'vendor/aspieprogress/jquery-asPieProgress.min.js'))
+			->appendFile($this->basePath($themePath . 'vendor/jvectormap/jquery-jvectormap.min.js'))
+			->appendFile($this->basePath($themePath . 'vendor/jvectormap/maps/jquery-jvectormap-au-mill-en.js'))
+			->appendFile($this->basePath($themePath . 'vendor/matchheight/jquery.matchHeight-min.js'))
 
 	// <!-- Scripts -->
-			->appendFile($this->basePath($themePath . '../js/core.js'))
-			->appendFile($this->basePath($themePath . '../js/site.js'))
+			->appendFile($this->basePath($themePath . 'js/core.js'))
+			->appendFile($this->basePath($themePath . 'js/site.js'))
 
-			->appendFile($this->basePath($themePath . '../js/sections/menu.js'))
-			->appendFile($this->basePath($themePath . '../js/sections/menubar.js'))
-			->appendFile($this->basePath($themePath . '../js/sections/gridmenu.js'))
-			->appendFile($this->basePath($themePath . '../js/sections/sidebar.js'))
+			->appendFile($this->basePath($themePath . 'js/sections/menu.js'))
+			->appendFile($this->basePath($themePath . 'js/sections/menubar.js'))
+			->appendFile($this->basePath($themePath . 'js/sections/gridmenu.js'))
+			->appendFile($this->basePath($themePath . 'js/sections/sidebar.js'))
 
-			->appendFile($this->basePath($themePath . '../js/configs/config-colors.js'))
-			->appendFile($this->basePath($themePath . '../js/configs/config-tour.js'))
+			->appendFile($this->basePath($themePath . 'js/configs/config-colors.js'))
+			->appendFile($this->basePath($themePath . 'js/configs/config-tour.js'))
 
-			->appendFile($this->basePath($themePath . '../js/components/asscrollable.js'))
-			->appendFile($this->basePath($themePath . '../js/components/animsition.js'))
-			->appendFile($this->basePath($themePath . '../js/components/slidepanel.js'))
-			->appendFile($this->basePath($themePath . '../js/components/switchery.js'))
+			->appendFile($this->basePath($themePath . 'js/components/asscrollable.js'))
+			->appendFile($this->basePath($themePath . 'js/components/animsition.js'))
+			->appendFile($this->basePath($themePath . 'js/components/slidepanel.js'))
+			->appendFile($this->basePath($themePath . 'js/components/switchery.js'))
 
 	// <!-- Scripts For This Page -->
-			->appendFile($this->basePath($themePath . '../js/components/matchheight.js'))
-			->appendFile($this->basePath($themePath . '../js/components/jvectormap.js'))
+			->appendFile($this->basePath($themePath . 'js/components/matchheight.js'))
+			->appendFile($this->basePath($themePath . 'js/components/jvectormap.js'))
 
-			->appendFile($this->basePath($themePath . '../examples/js/dashboard/v1.js'))
+			->appendFile($this->basePath($themePath . 'examples/js/dashboard/v1.js'))
 		;
 		$this->inlineScript();
 	?>
