@@ -4,7 +4,7 @@ foreach ($this->container as $page):
 	if ($this->navigation()->accept($page)):
 		$classnames = array('site-menu-item');
 		if (!empty($page->pages)) { $classnames[] = 'has-sub'; }
-		if ($page->isActive()) { $classnames[] = $this->navigation()->menu()->getLiActiveClass(); }
+		if ($page->isActive(true)) { $classnames[] = $this->navigation()->menu()->getLiActiveClass(); }
 		
 		$html .= '<li class="'.(implode(" ", $classnames)).'">' . PHP_EOL;
 		if (!empty($page->pages)) {
@@ -24,7 +24,7 @@ foreach ($this->container as $page):
 				if ($this->navigation()->accept($subpage)):
 					$subclassnames = array('site-menu-item');
 					if (!empty($subpage->pages)) { $subclassnames[] = 'has-sub'; }
-					if ($subpage->isActive()) { $subclassnames[] = $this->navigation()->menu()->getLiActiveClass(); }
+					if ($subpage->isActive(true)) { $subclassnames[] = $this->navigation()->menu()->getLiActiveClass(); }
 
 					// --- recursion!!!
 					$html .= '<li class="'.(implode(" ", $subclassnames)).'">' . PHP_EOL;
