@@ -8,7 +8,7 @@ foreach ($this->container as $page):
 		
 		$html .= '<li class="'.(implode(" ", $classnames)).'">' . PHP_EOL;
 		if (!empty($page->pages)) {
-			$html .= '<a data-slug="'.$page->getHref().'" href="'.$page->getHref().'">' . PHP_EOL .
+			$html .= '<a data-slug="'.$page->getHref().'" href="javascript:void(0);">' . PHP_EOL .
 				($page->get('icon') ? '<i class="site-menu-icon wb-'.$page->get('icon').'" aria-hidden="true"></i> ' : '' ) . PHP_EOL .
 				$page->getLabel().
 			'</a>' . PHP_EOL;
@@ -29,7 +29,7 @@ foreach ($this->container as $page):
 					// --- recursion!!!
 					$html .= '<li class="'.(implode(" ", $subclassnames)).'">' . PHP_EOL;
 					if (!empty($subpage->pages)) {
-						$html .= '<a data-slug="'.$subpage->getHref().'" href="'.$subpage->getHref().'">' . PHP_EOL .
+						$html .= '<a data-slug="'.$subpage->getHref().'" href="javascript:void(0);">' . PHP_EOL .
 							($subpage->get('icon') ? '<i class="site-menu-icon wb-'.$subpage->get('icon').'" aria-hidden="true"></i> ' : '' ) . PHP_EOL .
 							$subpage->getLabel().
 						'</a>' . PHP_EOL;
