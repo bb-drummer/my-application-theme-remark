@@ -31,8 +31,12 @@
 			<a class="navbar-avatar dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false"
 			data-animation="scale-up" role="button">
 				<span class="avatar avatar-online">
-				<?php echo $this->gravatar($this->zfcUserIdentity()->getEmail()) ?>
-				<!-- img src="/<?php echo $themePath; ?>portraits/5.jpg" alt="..." -->
+				<?php if ($this->zfcUserIdentity()) { 
+					echo $this->gravatar($this->zfcUserIdentity()->getEmail());
+				} else {
+					echo '<img src="/<?php echo $themePath; ?>images/dummy-user.png" alt="..." />';
+				}?>
+				
 				<i></i>
 				</span>
 			</a>
