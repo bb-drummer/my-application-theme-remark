@@ -34,7 +34,7 @@
 				<?php if ($this->zfcUserIdentity()) { 
 					echo $this->gravatar($this->zfcUserIdentity()->getEmail());
 				} else {
-					echo '<img src="/<?php echo $themePath; ?>images/dummy-user.png" alt="..." />';
+					echo '<img src="/' . $themePath . 'images/dummy-user.png" alt="..." />';
 				}?>
 				
 				<i></i>
