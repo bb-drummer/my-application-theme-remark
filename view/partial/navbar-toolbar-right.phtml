@@ -30,7 +30,7 @@
 			<li class="dropdown">
 			<a class="navbar-avatar dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false"
 			data-animation="scale-up" role="button">
-				<span class="avatar avatar-online">
+				<span class="avatar<?php if ($this->zfcUserIdentity()) { echo ' avatar-online'; } else { echo ' avatar-offline'; } ?>">
 				<?php if ($this->zfcUserIdentity()) { 
 					echo $this->gravatar($this->zfcUserIdentity()->getEmail());
 				} else {
