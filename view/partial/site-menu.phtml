@@ -1,5 +1,85 @@
+<?php 
+$html = '<ul class="'.$this->navigation()->menu()->getUlClass().'">' . PHP_EOL;
+foreach ($this->container as $page):
+	if ($this->navigation()->accept($page)):
+		$classnames = array('site-menu-item');
+		if (!empty($page->pages)) { $classnames[] = 'has-sub'; }
+		if ($page->isActive()) { $classnames[] = $this->navigation()->menu()->getLiActiveClass(); }
+		
+		$html .= '<li class="'.(implode(" ", $classnames)).'">' . PHP_EOL;
+		if (!empty($page->pages)) {
+			$html .= '<a data-slug="'.$page->getHref().'" href="'.$page->getHref().'">' . PHP_EOL .
+				($page->get('icon') ? '<i class="site-menu-icon wb-'.$page->get('icon').'" aria-hidden="true"></i> ' : '' ) . PHP_EOL .
+				$page->getLabel().
+			'</a>' . PHP_EOL;
+		} else {
+			$html .= '<a class="animsition-link" data-slug="'.$page->getHref().'" href="'.$page->getHref().'">' . PHP_EOL .
+				($page->get('icon') ? '<i class="site-menu-icon wb-'.$page->get('icon').'" aria-hidden="true"></i> ' : '' ) . PHP_EOL .
+				$page->getLabel().
+			'</a>' . PHP_EOL;
+		}
+		if (!empty($page->pages)):
+			$html .= '<ul class="site-menu-sub">' . PHP_EOL;
+			foreach ($page->pages as $subpage):
+				if ($this->navigation()->accept($subpage)):
+					$subclassnames = array('site-menu-item');
+					if (!empty($subpage->pages)) { $subclassnames[] = 'has-sub'; }
+					if ($subpage->isActive()) { $subclassnames[] = $this->navigation()->menu()->getLiActiveClass(); }
+					
+					$html .= '<li class="'.(implode(" ", $subclassnames)).'">' . PHP_EOL;
+					if (!empty($subpage->pages)) {
+						$html .= '<a data-slug="'.$subpage->getHref().'" href="'.$subpage->getHref().'">' . PHP_EOL .
+							($subpage->get('icon') ? '<i class="site-menu-icon wb-'.$subpage->get('icon').'" aria-hidden="true"></i> ' : '' ) . PHP_EOL .
+							$subpage->getLabel().
+						'</a>' . PHP_EOL;
+					} else {
+						$html .= '<a class="animsition-link" data-slug="'.$subpage->getHref().'" href="'.$subpage->getHref().'">' . PHP_EOL .
+							($subpage->get('icon') ? '<i class="site-menu-icon wb-'.$subpage->get('icon').'" aria-hidden="true"></i> ' : '' ) . PHP_EOL .
+							$subpage->getLabel().
+						'</a>' . PHP_EOL;
+					}
+					if (!empty($subpage->pages)):
+						$html .= '<ul class="site-menu-sub">' . PHP_EOL;
+						foreach ($subpage->pages as $subsubpage):
+							if ($this->navigation()->accept($subsubpage)):
+								$subsubclassnames = array('site-menu-item');
+								if (!empty($subsubpage->pages)) { $subsubclassnames[] = 'has-sub'; }
+								if ($subsubpage->isActive()) { $subsubclassnames[] = $this->navigation()->menu()->getLiActiveClass(); }
+								
+								$html .= '<li class="'.(implode(" ", $subsubclassnames)).'">' . PHP_EOL;
+								$html .= '<a href="'.$subsubpage->getHref().'">'.
+									$subsubpage->getLabel().
+								'</a>' . PHP_EOL;
+								
+								$html .= '</li>' . PHP_EOL;
+								
+							endif;
+						endforeach;
+						$html .= '</ul>' . PHP_EOL;
+					endif;
+					/*$html .= '<a href="'.$subpage->getHref().'">'.
+						$subpage->getLabel().
+					'</a>' . PHP_EOL;*/
+					
+					$html .= '</li>' . PHP_EOL;
+					
+				endif;
+			endforeach;
+			$html .= '</ul>' . PHP_EOL;
+		endif;
+		
+		$html .= '</li>' . PHP_EOL;
+	endif;
+endforeach;
+$html .= '</ul>' . PHP_EOL;
+
+echo $html;
+
+?>
+<ul class="site-menu hide hidden" style="display: none !important;">
+			<li class="site-menu-category"><?php echo $this->translate('General') ?></li>
+			</ul>
 			<ul class="site-menu">
-			<li class="site-menu-category">General</li>
 			<li class="site-menu-item has-sub active open">
 				<a href="javascript:void(0)" data-slug="dashboard">
 				<i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
@@ -954,8 +1034,8 @@
 				</a>
 			</li>
 			</ul>
-<?php
-/* $ulClass = $this->navigation()->menu()->getUlClass();
+<?php /*
+$ulClass = $this->navigation()->menu()->getUlClass();
 $activeClass = $this->navigation()->menu()->getLiActiveClass();
 
 $itemActive = $this->container->getPages();
@@ -979,8 +1059,8 @@ echo $html;
 $html = '<ul class="'.$ulClass.'">' . PHP_EOL;
 foreach ($itemActive as $page):
 	if ($this->navigation()->accept($page)):
-		$classnames = array();
-		if (!empty($page->pages)) { $classnames[] = 'hasSub'; }
+		$classnames = array('site-menu-item');
+		if (!empty($page->pages)) { $classnames[] = 'has-sub'; }
 		if ($page->isActive(true)) { $classnames[] = $activeClass; }
 		
 		$html .= '<li class="'.(implode(" ", $classnames)).'">';

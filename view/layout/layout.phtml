@@ -106,7 +106,22 @@
 		<div>
 		<div>
 
-			<?php require __DIR__."/../partial/site-menu.phtml"; ?>
+			<?php //require __DIR__."/../partial/site-menu.phtml"; ?>
+			<?php
+				$topNavPartial = array('partial/site-menu.phtml', 'default');
+				$this->navigation('navigation')
+					  ->menu()
+					  //->setMinDepth(0)
+					  //->setMaxDepth(0)
+					  ->setPartial($topNavPartial)
+					  ->setUlClass('site-menu')
+					  ->setLiActiveClass('active open')
+				;
+				echo $this->navigation('navigation')
+					->menu()
+					//->render()
+				;
+			?>
 			
 			<div class="site-menubar-section">
 			<h5>
