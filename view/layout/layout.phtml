@@ -110,7 +110,7 @@
 
 			<?php //require __DIR__."/../partial/site-menu.phtml"; ?>
 			<?php
-				$topNavPartial = array('partial/site-menu.phtml', 'default');
+				/*$topNavPartial = array('partial/site-menu.phtml', 'default');
 				$this->navigation('navigation')
 					  ->menu()
 					  //->setMinDepth(0)
@@ -122,7 +122,22 @@
 				echo $this->navigation('navigation')
 					->menu()
 					//->render()
+				;*/
+				$oTwitterBootstrap = $this->bootstrap();
+				$oNavBar = $oTwitterBootstrap->Navbar('navigation')
+					  ->setMinDepth(0)
+					  ->setMaxDepth(2)
+					  //->setPartial($topNavPartial)
+					  ->setUlClass('site-menu')
+					  ->setSubUlClass('site-menu-sub')
+					  ->setDefaultLiClass('site-menu-item')
+					  ->setSubLiClass('has-sub')
+					  ->setSubLiClassLevel0('has-sub')
+					  ->setLiActiveClass('active open')
+					  ->setIconPrefixClass('site-menu-icon wb-')
+					  ->setHrefSubToggleOverride('javascript:void(0);')
 				;
+				echo $oNavBar->render();
 			?>
 			
 			<div class="site-menubar-section">
