@@ -6,10 +6,10 @@
 	<?php echo $this->headTitle('[BB] '. $this->translate('MyApplication'))->setSeparator(' - ')->setAutoEscape(false) ?>
 	<?php 
 		echo $this->headMeta()
+			->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
 			->appendName('viewport', 'width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui')
 			->appendName('description', 'ZF2 Base Application')
 			->appendName('author', '[drgon-projecs.net]')
-			->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
 		;
 	?>
 
@@ -108,21 +108,7 @@
 		<div>
 		<div>
 
-			<?php //require __DIR__."/../partial/site-menu.phtml"; ?>
-			<?php
-				/*$topNavPartial = array('partial/site-menu.phtml', 'default');
-				$this->navigation('navigation')
-					  ->menu()
-					  //->setMinDepth(0)
-					  //->setMaxDepth(0)
-					  ->setPartial($topNavPartial)
-					  ->setUlClass('site-menu')
-					  ->setLiActiveClass('active open')
-				;
-				echo $this->navigation('navigation')
-					->menu()
-					//->render()
-				;*/
+			<?php 
 				$oTwitterBootstrap = $this->bootstrap();
 				$oNavBar = $oTwitterBootstrap->Navbar('navigation')
 					  ->setMinDepth(0)
@@ -130,6 +116,7 @@
 					  //->setPartial($topNavPartial)
 					  ->setUlClass('site-menu')
 					  ->setSubUlClass('site-menu-sub')
+					  ->setSubUlClassLevel1('site-menu-sub')
 					  ->setDefaultLiClass('site-menu-item')
 					  ->setSubLiClass('has-sub')
 					  ->setSubLiClassLevel0('has-sub')
