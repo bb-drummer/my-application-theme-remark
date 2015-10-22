@@ -108,7 +108,6 @@
 							$oNavBar = $oTwitterBootstrap->Navbar('navigation')
 								  ->setMinDepth(0)
 								  ->setMaxDepth(3)
-								  //->setPartial($topNavPartial)
 								  ->setUlClass('site-menu')
 								  ->setSubUlClass('site-menu-sub')
 								  ->setSubUlClassLevel1('site-menu-sub')
@@ -117,7 +116,7 @@
 								  ->setSubLiClassLevel0('site-menu-item has-sub')
 								  ->setLiActiveClass('active open')
 								  ->setIconPrefixClass('site-menu-icon wb-')
-								  ->setHrefSubToggleOverride('javascript:void(0);')
+						  		  ->setHrefSubToggleOverride('javascript:void(0);')
 							;
 							echo $oNavBar->render();
 						?>
