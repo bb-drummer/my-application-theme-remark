@@ -31,6 +31,10 @@
 			$this->headLink()
 				->appendStylesheet($this->basePath($themePath . 'css/stylesheets.css'))
 			;
+			$cssfiles = $oTwitterBootstrap->Config()->get('app')->get('css');
+			foreach ($cssfiles as $key => $file) {
+				$this->headLink()->appendStylesheet($this->basePath($file));
+			}
 			echo $this->headLink();
 		?>
 	
@@ -289,6 +293,10 @@
 	
 				->appendFile($this->basePath($themePath . 'examples/js/dashboard/v1.js'))
 			;
+			$jsfiles = $oTwitterBootstrap->Config()->get('app')->get('js');
+			foreach ($jsfiles as $key => $file) {
+				$this->inlineScript()->appendFile($this->basePath($file));
+			}
 			echo $this->inlineScript();
 		?>
 	</body>
