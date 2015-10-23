@@ -30,6 +30,7 @@
 			;
 			$this->headLink()
 				->appendStylesheet($this->basePath($themePath . 'css/stylesheets.css'))
+				->appendStylesheet($this->basePath($themePath . 'css/fontawesome/css/fontawesome.min.css'))
 			;
 			$cssfiles = $oTwitterBootstrap->Config()->get('app')->get('css');
 			if (is_array($cssfiles) || ($cssfiles instanceof \Zend\Config\Config)) foreach ($cssfiles as $key => $file) {
@@ -121,7 +122,8 @@
 								  ->setSubLiClass('site-menu-item has-sub')
 								  ->setSubLiClassLevel0('site-menu-item has-sub')
 								  ->setLiActiveClass('active open')
-								  ->setIconPrefixClass('site-menu-icon wb-')
+								  ->setIconPrefixClass('site-menu-icon fa fa-')
+								  //->setIconPrefixClass('site-menu-icon wb-')
 						  		  ->setHrefSubToggleOverride('javascript:void(0);')
 							;
 							echo $oNavBar->render();
