@@ -85,6 +85,14 @@
 			
 					<!-- Navbar Toolbar Right -->
 					<?php echo $this->partial('partial/navbar-toolbar-right.phtml', array("themePath" => $themePath)); ?>
+					<?php 
+						$oBootstrapComponents = $this->bootstrap()->Components();
+						$oLocaleMenu = $oBootstrapComponents->Languagemenu()
+							->setUlClass('nav navbar-toolbar navbar-right navbar-toolbar-right')
+							->setIconPrefixClass('flag-icon flag-icon-')
+						;
+						echo $oLocaleMenu->render(); 
+					?>
 					<!-- End Navbar Toolbar Right -->
 				</div>
 				<!-- End Navbar Collapse -->
