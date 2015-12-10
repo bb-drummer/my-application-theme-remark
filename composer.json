@@ -3,7 +3,7 @@
   "description" : "Taurus - Responsive Bootstrap3 Admin Template ZF2 integration",
   "version" : "1.0",
   "license" : "BSD-3-Clause",
-  "keywords" : [ "bootstrap", "theme", "Remark", "admin", "template" ],
+  "keywords" : [ "bootstrap", "theme", "Remark", "admin", "template", "bootstrap" ],
   "extra" : {
     "branch-alias" : {
       "dev-master" : "master"
