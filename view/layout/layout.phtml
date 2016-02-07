@@ -238,6 +238,17 @@
 		<div class="page">
 			<div class="page-content padding-30 container-fluid">
 			
+				<div id="panel-messages" class="row">					
+					<div class="col-md-12">		
+						<?php
+							echo $this->flashMessenger()->render('error', array('error alert flashmessages'));
+							echo $this->flashMessenger()->render('warning', array('warning alert flashmessages'));
+							echo $this->flashMessenger()->render('success', array('success alert flashmessages'));
+							echo $this->flashMessenger()->render('info', array('info alert flashmessages'));
+						?>
+					</div>
+				</div>
+				
 				<?php
 					$params = $this->getHelperPluginManager()
 						->getServiceLocator()
