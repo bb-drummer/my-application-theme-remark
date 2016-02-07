@@ -332,10 +332,10 @@
 		// <!-- Scripts For This Page -->
 				->appendFile($this->basePath($themePath . 'js/components/matchheight.js'))
 				->appendFile($this->basePath($themePath . 'js/components/jvectormap.js'))
-	
-				//->appendFile($this->basePath($themePath . 'examples/js/dashboard/v1.js'))
 			
 				->appendFile($this->basePath($themePath . '../zf2-basic/js/app.js'))
+	
+				->appendFile($this->basePath($themePath . 'examples/js/dashboard/v1.js'))
 			;
 			$jsfiles = $oTwitterBootstrap->Config()->get('app')->get('js');
 			if (is_array($jsfiles) || ($jsfiles instanceof \Zend\Config\Config)) foreach ($jsfiles as $key => $file) {
