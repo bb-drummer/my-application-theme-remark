@@ -1,6 +1,9 @@
 <?php 
 	echo $this->doctype(); 
+	/** @var \TwitterBootstrapAPI\View\Helper\Bootstrap $oTwitterBootstrap **/
 	$oTwitterBootstrap = $this->bootstrap();
+	/** @var \TwitterBootstrapAPI\View\Helper\Components $oComponents **/
+	$oComponents = $this->Components();
 ?>
 <html class="no-js css-menubar" lang="en">
 	<head>
@@ -231,7 +234,30 @@
 		<div class="page">
 			<div class="page-content padding-30 container-fluid">
 			
-				<?php echo $this->content; ?>
+				<?php
+					$params = $this->getHelperPluginManager()
+						->getServiceLocator()
+						->get('Application')
+						->getMvcEvent()
+						->getRouteMatch()
+						->getParams();
+					if ($params["action"] == "index") {
+						echo $this->content;
+					} else {
+						$panelLayout = $oComponents->Panel()
+						->setHeader( (isset($this->title) ? $this->title : "") )
+						->setContent(
+								array(
+										'tagname' => 'div',
+										'classnames' => 'panel-body alert-wrap',
+										'content' => $this->content,
+								)
+							)
+						;
+						
+						echo $panelLayout;
+					}
+				?>
 				
 			</div>
 		</div>
