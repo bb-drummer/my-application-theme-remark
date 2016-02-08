@@ -236,7 +236,7 @@
 	
 		<!-- Page -->
 		<div class="page">
-			<div class="page-header">
+			<div class="page-header padding-15">
 				<h1 class="page-title margin-bottom-10"><?php echo $this->escapeHtml((isset($this->title) ? $this->title : "")); ?></h1>
 				<?php 
 					$oBreadcrumbs = $oTwitterBootstrap->Breadcrumbs('navigation')
@@ -247,19 +247,19 @@
 				?>
 			</div>
 			
-			<div id="panel-messages" class="row">					
-				<div class="col-md-12">		
-					<?php
-						echo $this->flashMessenger()->render('error', array('alert alert-error alert-icon alert-dismissible dark flashmessages'));
-						echo $this->flashMessenger()->render('warning', array('alert alert-warning alert-icon alert-dismissible dark flashmessages'));
-						echo $this->flashMessenger()->render('success', array('alert alert-success alert-icon alert-dismissible dark flashmessages'));
-						echo $this->flashMessenger()->render('info', array('alert alert-info alert-icon alert-dismissible dark flashmessages'));
-					?>
-				</div>
-			</div>
-				
-			<div class="page-content padding-30 container-fluid">
+			<div class="page-content padding-15 container-fluid">
 			
+				<div id="panel-messages" class="row">					
+					<div class="col-md-12">		
+						<?php
+							echo $this->flashMessenger()->render('error', array('alert alert-error alert-icon alert-dismissible dark flashmessages'));
+							echo $this->flashMessenger()->render('warning', array('alert alert-warning alert-icon alert-dismissible dark flashmessages'));
+							echo $this->flashMessenger()->render('success', array('alert alert-success alert-icon alert-dismissible dark flashmessages'));
+							echo $this->flashMessenger()->render('info', array('alert alert-info alert-icon alert-dismissible dark flashmessages'));
+						?>
+					</div>
+				</div>
+					
 				<?php
 					$params = $this->getHelperPluginManager()
 						->getServiceLocator()
