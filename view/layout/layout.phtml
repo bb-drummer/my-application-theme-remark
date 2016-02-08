@@ -250,10 +250,10 @@
 			<div id="panel-messages" class="row">					
 				<div class="col-md-12">		
 					<?php
-						echo $this->flashMessenger()->render('error', array('alert-error alert alert-dismissible flashmessages'));
-						echo $this->flashMessenger()->render('warning', array('alert-warning alert alert-dismissible flashmessages'));
-						echo $this->flashMessenger()->render('success', array('alert-success alert alert-dismissible flashmessages'));
-						echo $this->flashMessenger()->render('info', array('alert-info alert alert-dismissible flashmessages'));
+						echo $this->flashMessenger()->render('error', array('alert alert-error alert-icon alert-dismissible dark flashmessages'));
+						echo $this->flashMessenger()->render('warning', array('alert alert-warning alert-icon alert-dismissible dark flashmessages'));
+						echo $this->flashMessenger()->render('success', array('alert alert-success alert-icon alert-dismissible dark flashmessages'));
+						echo $this->flashMessenger()->render('info', array('alert alert-info alert-icon alert-dismissible dark flashmessages'));
 					?>
 				</div>
 			</div>
