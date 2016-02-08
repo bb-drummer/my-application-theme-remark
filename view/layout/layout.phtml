@@ -236,19 +236,36 @@
 	
 		<!-- Page -->
 		<div class="page">
+			<div class="page-header">
+				<h1 class="page-title margin-bottom-10"><?php echo $this->escapeHtml((isset($this->title) ? $this->title : "")); ?></h1>
+				<?php 
+					$oBreadcrumbs = $oTwitterBootstrap->Breadcrumbs('navigation')
+						//->setHeader( $this->translate('you are here :') )
+						->setMinDepth(0)
+					;
+					echo $oBreadcrumbs->render(); 
+				?>
+				<!-- ol class="breadcrumb">
+					<li><a href="../../index.html">Home</a></li>
+					<li><a href="categories.html">Categories</a></li>
+					<li><a href="articles.html">Getting Started</a></li>
+					<li class="active">Article</li>
+				</ol -->
+			</div>
+			
+			<div id="panel-messages" class="row">					
+				<div class="col-md-12">		
+					<?php
+						echo $this->flashMessenger()->render('error', array('alert-error alert alert-dismissible flashmessages'));
+						echo $this->flashMessenger()->render('warning', array('alert-warning alert alert-dismissible flashmessages'));
+						echo $this->flashMessenger()->render('success', array('alert-success alert alert-dismissible flashmessages'));
+						echo $this->flashMessenger()->render('info', array('alert-info alert alert-dismissible flashmessages'));
+					?>
+				</div>
+			</div>
+				
 			<div class="page-content padding-30 container-fluid">
 			
-				<div id="panel-messages" class="row">					
-					<div class="col-md-12">		
-						<?php
-							echo $this->flashMessenger()->render('error', array('alert-error alert alert-dismissible flashmessages'));
-							echo $this->flashMessenger()->render('warning', array('alert-warning alert alert-dismissible flashmessages'));
-							echo $this->flashMessenger()->render('success', array('alert-success alert alert-dismissible flashmessages'));
-							echo $this->flashMessenger()->render('info', array('alert-info alert alert-dismissible flashmessages'));
-						?>
-					</div>
-				</div>
-				
 				<?php
 					$params = $this->getHelperPluginManager()
 						->getServiceLocator()
