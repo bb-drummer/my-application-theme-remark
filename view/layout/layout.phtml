@@ -245,12 +245,6 @@
 					;
 					echo $oBreadcrumbs->render(); 
 				?>
-				<!-- ol class="breadcrumb">
-					<li><a href="../../index.html">Home</a></li>
-					<li><a href="categories.html">Categories</a></li>
-					<li><a href="articles.html">Getting Started</a></li>
-					<li class="active">Article</li>
-				</ol -->
 			</div>
 			
 			<div id="panel-messages" class="row">					
@@ -273,9 +267,9 @@
 						->getMvcEvent()
 						->getRouteMatch()
 						->getParams();
-					if ($params["action"] == "index") {
-						echo $this->content;
-					} else {
+					//if ($params["action"] == "index") {
+						//echo $this->content;
+					//} else {
 						$panelLayout = $oComponents->Panel()
 						->setHeader( (isset($this->title) ? $this->title : "") )
 						->setContent(
@@ -288,7 +282,7 @@
 						;
 						
 						echo $panelLayout;
-					}
+					//}
 				?>
 				
 			</div>
