@@ -4,7 +4,8 @@
   "version" : "0.0.1",
   "require" : {
     "php" : ">=5.5",
-    "zendframework/zendframework" : "dev-master"
+    "zendframework/zendframework" : "dev-master",
+    "composer/installers": "~1.0"
   },
   "license" : "BSD-3-Clause",
   "keywords" : [ "bootstrap", "theme", "Remark", "admin", "template", "bootstrap" ],
@@ -19,7 +20,7 @@
     "post-install-cmd" : [ ],
     "post-update-cmd" : [ ]
   },
-  "type" : "module",
+  "type" : "zend-extra",
   "homepage" : "http://git.dragon-projects.de:81/themes/zf2-remark",
   "authors" : [ {
     "name" : "Björn Bartels",
