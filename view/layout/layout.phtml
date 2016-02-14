@@ -20,7 +20,7 @@
 		?>
 	
 		<?php 
-			$themePath = "assets/themes/remark/";
+			$themePath = "themes/remark/assets/";
 			$this->headLink(array(
 					'rel' => 'shortcut icon', 
 					'type' => 'image/vnd.microsoft.icon', 
@@ -37,7 +37,7 @@
 				->appendStylesheet($this->basePath($themePath . 'vendor/datatables/dataTables.min.css'))
 				->appendStylesheet($this->basePath($themePath . 'vendor/datatables-bootstrap/dataTables.bootstrap.min.css'))
 				->appendStylesheet($this->basePath($themePath . 'vendor/datatables-responsive/dataTables.responsive.min.css'))
-				//->appendStylesheet($this->basePath($themePath . '../zf2-basic/js/datatables/css/dataTables.bootstrap.min.css'))
+				//->appendStylesheet($this->basePath($themePath . '../../basic/assets/js/datatables/css/dataTables.bootstrap.min.css'))
 			;
 			$cssfiles = $oTwitterBootstrap->Config()->get('app')->get('css');
 			if (is_array($cssfiles) || ($cssfiles instanceof \Zend\Config\Config)) foreach ($cssfiles as $key => $file) {
@@ -323,7 +323,7 @@
 				->appendFile($this->basePath($themePath . 'vendor/screenfull/screenfull.js'))
 				->appendFile($this->basePath($themePath . 'vendor/slidepanel/jquery-slidePanel.js'))
 			
-				->appendFile($this->basePath($themePath . '../zf2-basic/js/datatables/js/jquery.dataTables.min.js'))
+				->appendFile($this->basePath($themePath . '../../basic/assets/js/datatables/js/jquery.dataTables.min.js'))
 	
 		// <!-- Plugins For This Page -->
 				->appendFile($this->basePath($themePath . 'vendor/skycons/skycons.js'))
@@ -355,7 +355,7 @@
 				->appendFile($this->basePath($themePath . 'js/components/matchheight.js'))
 				->appendFile($this->basePath($themePath . 'js/components/jvectormap.js'))
 			
-				->appendFile($this->basePath($themePath . '../zf2-basic/js/app.js'))
+				->appendFile($this->basePath($themePath . '../../basic/assets/js/app.js'))
 	
 				->appendFile($this->basePath($themePath . 'examples/js/dashboard/v1.js'))
 			;
