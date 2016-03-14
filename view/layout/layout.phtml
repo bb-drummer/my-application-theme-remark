@@ -38,6 +38,8 @@
 				->appendStylesheet($this->basePath($themePath . 'vendor/datatables-bootstrap/dataTables.bootstrap.min.css'))
 				->appendStylesheet($this->basePath($themePath . 'vendor/datatables-responsive/dataTables.responsive.min.css'))
 				//->appendStylesheet($this->basePath($themePath . '../../basic/assets/js/datatables/css/dataTables.bootstrap.min.css'))
+				
+				->appendStylesheet($this->basePath('application-assets/dist/myapplication.min.css'))
 			;
 			$cssfiles = $oTwitterBootstrap->Config()->get('app')->get('css');
 			if (is_array($cssfiles) || ($cssfiles instanceof \Zend\Config\Config)) foreach ($cssfiles as $key => $file) {
@@ -354,8 +356,9 @@
 		// <!-- Scripts For This Page -->
 				->appendFile($this->basePath($themePath . 'js/components/matchheight.js'))
 				->appendFile($this->basePath($themePath . 'js/components/jvectormap.js'))
-			
-				->appendFile($this->basePath($themePath . '../../basic/assets/js/app.js'))
+
+
+				->appendFile($this->basePath('application-assets/dist/myapplication.min.js'))
 	
 				->appendFile($this->basePath($themePath . 'examples/js/dashboard/v1.js'))
 			;
