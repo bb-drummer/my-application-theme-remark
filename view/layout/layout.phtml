@@ -1,7 +1,7 @@
 <?php 
 	echo $this->doctype(); 
-	/** @var \UIComponents\View\Helper\Bootstrap $oTwitterBootstrap **/
-	$oTwitterBootstrap = $this->bootstrap();
+	/** @var \UIComponents\View\Helper\Utilities $oUtilities **/
+	$oUtilities = $this->Utilities();
 	/** @var \UIComponents\View\Helper\Components $oComponents **/
 	$oComponents = $this->Components();
 ?>
@@ -9,7 +9,7 @@
 	<head>
 		<!-- <?php echo __DIR__ ; ?> -->
 		<meta charset="utf-8">
-		<?php echo $this->headTitle('[BB] '. $this->translate($oTwitterBootstrap->AppTitle()))->setSeparator(' - ')->setAutoEscape(false) ?>
+		<?php echo $this->headTitle('[BB] '. $this->translate($oUtilities->AppTitle()))->setSeparator(' - ')->setAutoEscape(false) ?>
 		<?php 
 			echo $this->headMeta()
 				->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
@@ -24,7 +24,7 @@
 			$this->headLink(array(
 					'rel' => 'shortcut icon', 
 					'type' => 'image/vnd.microsoft.icon', 
-					'href' => $this->basePath($themePath . $oTwitterBootstrap->AppFavicon())
+					'href' => $this->basePath($themePath . $oUtilities->AppFavicon())
 	 			))
 	 			->append((object)array(
 					'rel' => 'apple-touch-icon', 
@@ -41,7 +41,7 @@
 				
 				->appendStylesheet($this->basePath('application-assets/dist/myapplication.min.css'))
 			;
-			$cssfiles = $oTwitterBootstrap->Config()->get('app')->get('css');
+			$cssfiles = $oUtilities->Config()->get('app')->get('css');
 			if (is_array($cssfiles) || ($cssfiles instanceof \Zend\Config\Config)) foreach ($cssfiles as $key => $file) {
 				$this->headLink()->appendStylesheet($this->basePath($file));
 			}
@@ -76,8 +76,8 @@
 					<i class="icon wb-more-horizontal" aria-hidden="true"></i>
 				</button>
 				<div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
-					<img class="navbar-brand-logo" src="<?php echo $this->basePath($themePath.$oTwitterBootstrap->AppLogo()) ?>" title="<?php echo $oTwitterBootstrap->AppTitle(); ?>">
-					<span class="navbar-brand-text"> <?php echo $this->translate($oTwitterBootstrap->AppTitle()) ?></span>
+					<img class="navbar-brand-logo" src="<?php echo $this->basePath($themePath.$oUtilities->AppLogo()) ?>" title="<?php echo $oUtilities->AppTitle(); ?>">
+					<span class="navbar-brand-text"> <?php echo $this->translate($oUtilities->AppTitle()) ?></span>
 				</div>
 				<button type="button" class="navbar-toggle collapsed" data-target="#site-navbar-search" data-toggle="collapse">
 					<span class="sr-only">Toggle Search</span>
@@ -95,8 +95,7 @@
 					<!-- Navbar Toolbar Right -->
 					<?php echo $this->partial('partial/navbar-toolbar-right.phtml', array("themePath" => $themePath)); ?>
 					<?php 
-						$oBootstrapComponents = $this->bootstrap()->Components();
-						$oLocaleMenu = $oBootstrapComponents->Languagemenu()
+						$oLocaleMenu = $oComponents->Languagemenu()
 							->setUlClass('nav navbar-toolbar navbar-right navbar-toolbar-right')
 							->setIconPrefixClass('flag-icon flag-icon-')
 						;
@@ -129,7 +128,7 @@
 					<div>
 			
 						<?php 
-							$oNavBar = $oTwitterBootstrap->Navbar('navigation')
+							$oNavBar = $oComponents->Navbar('navigation')
 								  ->setMinDepth(0)
 								  ->setMaxDepth(3)
 								  ->setUlClass('site-menu')
@@ -241,7 +240,7 @@
 			<div class="page-header padding-15">
 				<h1 class="page-title margin-bottom-10"><?php echo $this->escapeHtml((isset($this->title) ? $this->title : "")); ?></h1>
 				<?php 
-					$oBreadcrumbs = $oTwitterBootstrap->Breadcrumbs('navigation')
+					$oBreadcrumbs = $oComponents->Breadcrumbs('navigation')
 						//->setHeader( $this->translate('you are here :') )
 						->setMinDepth(0)
 					;
@@ -263,12 +262,12 @@
 				</div>
 					
 				<?php
-					$params = $this->getHelperPluginManager()
+					/*$params = $this->getHelperPluginManager()
 						->getServiceLocator()
 						->get('Application')
 						->getMvcEvent()
 						->getRouteMatch()
-						->getParams();
+						->getParams();*/
 					//if ($params["action"] == "index") {
 						//echo $this->content;
 					//} else {
@@ -362,7 +361,7 @@
 	
 				->appendFile($this->basePath($themePath . 'examples/js/dashboard/v1.js'))
 			;
-			$jsfiles = $oTwitterBootstrap->Config()->get('app')->get('js');
+			$jsfiles = $oUtilities->Config()->get('app')->get('js');
 			if (is_array($jsfiles) || ($jsfiles instanceof \Zend\Config\Config)) foreach ($jsfiles as $key => $file) {
 				$this->inlineScript()->appendFile($this->basePath($file));
 			}
