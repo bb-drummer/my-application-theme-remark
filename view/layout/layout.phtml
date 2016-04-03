@@ -128,7 +128,7 @@
 					<div>
 			
 						<?php 
-							$oNavBar = $oComponents->Nav('navigation')
+							$oNavBar = $oComponents->Nav()
 								  ->setMinDepth(0)
 								  ->setMaxDepth(3)
 								  ->setUlClass('site-menu')
@@ -240,7 +240,7 @@
 			<div class="page-header padding-15">
 				<h1 class="page-title margin-bottom-10"><?php echo $this->escapeHtml((isset($this->title) ? $this->title : "")); ?></h1>
 				<?php 
-					$oBreadcrumbs = $oComponents->Breadcrumbs('navigation')
+					$oBreadcrumbs = $oComponents->Breadcrumbs()
 						//->setHeader( $this->translate('you are here :') )
 						->setMinDepth(0)
 					;
